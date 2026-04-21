@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: smart-home-advanced
+    env: node
+    plan: free
+    buildCommand: echo No build step
+    startCommand: node server.js

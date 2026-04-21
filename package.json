@@ -1,0 +1,13 @@
+{
+  "name": "smart-home-advanced",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deployable smart home demo with static frontend and Express backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
