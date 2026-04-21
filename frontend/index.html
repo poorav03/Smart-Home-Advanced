@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Home 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1 class="title">Smart Home System</h1>
+
+<div id="scene-container"></div>
+
+<div class="hotspot" style="top:65%; left:25%;" onclick="goTo('technical.html')">
+  Technical Working
+</div>
+
+<div class="hotspot" style="top:45%; left:70%;" onclick="goTo('future.html')">
+  Future Innovation
+</div>
+
+<div class="hotspot" style="top:25%; left:50%;" onclick="goTo('hardware.html')">
+  Hardware Specs
+</div>
+
+<div class="hotspot" style="top:80%; left:60%;" onclick="goTo('mobile.html')">
+  Mobile App Working
+</div>
+
+<div class="scene-note">
+  If no 3D model is bundled, the viewer shows an animated placeholder so the page still works online.
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

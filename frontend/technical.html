@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Technical Flow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Live Server Flow</h1>
+
+<div class="flow">
+  <div class="node">Mobile</div>
+  <div class="node">-></div>
+  <div class="node">Server</div>
+  <div class="node">-></div>
+  <div class="node">Appliance</div>
+</div>
+
+<script>
+const nodes = document.querySelectorAll(".node");
+
+setInterval(() => {
+  nodes.forEach((n, i) => {
+    setTimeout(() => {
+      n.style.color = "lime";
+      setTimeout(() => {
+        n.style.color = "white";
+      }, 400);
+    }, i * 400);
+  });
+}, 2000);
+</script>
+
+</body>
+</html>
