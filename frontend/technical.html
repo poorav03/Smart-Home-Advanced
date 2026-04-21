@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Flow | Smart Home Advanced</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>Smart Home Advanced</strong>
+          <small>Technical Working</small>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="technical.html">Technical Flow</a>
+        <a href="hardware.html">Hardware</a>
+        <a href="future.html">Future Scope</a>
+        <a href="mobile.html">Mobile Demo</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Teacher Explanation Mode</p>
+        <h1>How the smart home server processes a real command.</h1>
+        <p class="page-subtext">
+          This page explains the technical working of the project in a simple way: command input,
+          server logic, and appliance response.
+        </p>
+      </div>
+      <div class="page-badge">Live request pipeline</div>
+    </section>
+
+    <section class="architecture-grid">
+      <article class="flow-card accent-cyan">
+        <span class="flow-icon">A</span>
+        <h3>Input Layer</h3>
+        <p>The user taps a control button in the mobile or web interface.</p>
+      </article>
+      <article class="flow-link"><span></span></article>
+      <article class="flow-card accent-orange">
+        <span class="flow-icon">B</span>
+        <h3>Server Layer</h3>
+        <p>The Node.js server receives the request, updates the device state, and stores it.</p>
+      </article>
+      <article class="flow-link"><span></span></article>
+      <article class="flow-card accent-lime">
+        <span class="flow-icon">C</span>
+        <h3>Output Layer</h3>
+        <p>The appliance reacts and the interface shows the new status immediately.</p>
+      </article>
+    </section>
+
+    <section class="timeline-grid">
+      <article class="timeline-card">
+        <strong>Step 1</strong>
+        <h3>User Request</h3>
+        <p>The mobile app or website sends a request when the user toggles a virtual device such as a light, fan, or security mode.</p>
+      </article>
+      <article class="timeline-card">
+        <strong>Step 2</strong>
+        <h3>Command Handling</h3>
+        <p>The server checks the endpoint, updates the correct device state, recalculates system values, and prepares a response.</p>
+      </article>
+      <article class="timeline-card">
+        <strong>Step 3</strong>
+        <h3>Feedback</h3>
+        <p>The interface updates instantly so the user can see the complete smart home status online without physical hardware.</p>
+      </article>
+    </section>
+
+    <section class="detail-card">
+      <p class="eyebrow">Core Logic</p>
+      <h3>Why the server is the heart of the project</h3>
+      <p>
+        The server acts as the central brain of the smart home. Instead of each device working
+        independently, the server coordinates commands, keeps track of device status, and becomes
+        the single point where automation logic can grow in the future.
+      </p>
+      <div class="signal-line"><span></span></div>
+    </section>
+
+    <section class="overview-grid">
+      <article class="overview-card">
+        <p class="eyebrow">Virtual Device</p>
+        <h3>Smart Light</h3>
+        <p>Represents lighting control from the server and proves how a digital request can alter home output state.</p>
+      </article>
+      <article class="overview-card">
+        <p class="eyebrow">Virtual Device</p>
+        <h3>Cooling Fan</h3>
+        <p>Shows how the same server can manage another appliance and influence derived metrics such as room temperature.</p>
+      </article>
+      <article class="overview-card">
+        <p class="eyebrow">Virtual Device</p>
+        <h3>Door And Security</h3>
+        <p>Demonstrates that the architecture can support access control and safety features in one connected platform.</p>
+      </article>
+    </section>
+  </div>
+</body>
+</html>

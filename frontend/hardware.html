@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware | Smart Home Advanced</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>Smart Home Advanced</strong>
+          <small>Hardware Overview</small>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="technical.html">Technical Flow</a>
+        <a class="active" href="hardware.html">Hardware</a>
+        <a href="future.html">Future Scope</a>
+        <a href="mobile.html">Mobile Demo</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Physical Layer</p>
+        <h1>The components that bring the smart home to life.</h1>
+        <p class="page-subtext">
+          These hardware modules work together with the server to control devices, collect data,
+          and execute automation commands in the home.
+        </p>
+      </div>
+      <div class="page-badge">Hardware + software integration</div>
+    </section>
+
+    <section class="hardware-grid">
+      <article class="component-card">
+        <span class="component-tag">Controller</span>
+        <h3>ESP32 / ESP8266</h3>
+        <p>Acts as the IoT node that connects sensors and appliances to the smart home network.</p>
+        <ul class="component-list">
+          <li>Handles Wi-Fi connectivity</li>
+          <li>Talks to the server or relay hardware</li>
+          <li>Enables scalable smart device expansion</li>
+        </ul>
+      </article>
+
+      <article class="component-card">
+        <span class="component-tag">Server</span>
+        <h3>Node.js Server</h3>
+        <p>Receives user commands and synchronizes device state across the interface.</p>
+        <ul class="component-list">
+          <li>Exposes control endpoints</li>
+          <li>Processes toggle requests</li>
+          <li>Returns real-time feedback</li>
+        </ul>
+      </article>
+
+      <article class="component-card">
+        <span class="component-tag">Switching</span>
+        <h3>Relay Module</h3>
+        <p>Converts digital commands into real switching behavior for lights and appliances.</p>
+        <ul class="component-list">
+          <li>Safe appliance control</li>
+          <li>Supports on/off switching</li>
+          <li>Useful for automation routines</li>
+        </ul>
+      </article>
+
+      <article class="component-card">
+        <span class="component-tag">Awareness</span>
+        <h3>Sensors</h3>
+        <p>Sensors can help the home make smart decisions instead of only manual responses.</p>
+        <ul class="component-list">
+          <li>Motion detection</li>
+          <li>Temperature and environment monitoring</li>
+          <li>Automation trigger events</li>
+        </ul>
+      </article>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home Advanced</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-page">
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>Smart Home Advanced</strong>
+          <small>Interactive Project Showcase</small>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="technical.html">Technical Flow</a>
+        <a href="hardware.html">Hardware</a>
+        <a href="future.html">Future Scope</a>
+        <a href="mobile.html">Mobile Demo</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid">
+        <div class="hero-copy glass-panel">
+          <p class="eyebrow">IoT + Web + Automation</p>
+          <h1>Turning a home into a responsive, intelligent system.</h1>
+          <p class="hero-text">
+            This project demonstrates how a smart home server can connect a user interface,
+            a central control layer, and home appliances into one colorful, real-time experience.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="mobile.html">Open Live Control</a>
+            <a class="secondary-button" href="technical.html">See System Flow</a>
+          </div>
+
+          <div class="metric-strip">
+            <article>
+              <strong>01</strong>
+              <span>Unified mobile and web control</span>
+            </article>
+            <article>
+              <strong>02</strong>
+              <span>Server-based device coordination</span>
+            </article>
+            <article>
+              <strong>03</strong>
+              <span>Expandable for future IoT modules</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual glass-panel">
+          <div class="orb orb-a"></div>
+          <div class="orb orb-b"></div>
+          <div id="scene-container" aria-label="3D smart home scene"></div>
+
+          <div class="floating-status status-live">
+            <span class="status-dot" id="heroStatusDot"></span>
+            <div>
+              <strong>Server Status</strong>
+              <p id="heroStatusText">Connecting to smart home server...</p>
+            </div>
+          </div>
+
+          <div class="floating-status status-device">
+            <strong>Light State</strong>
+            <p id="heroDeviceText">Checking live device state...</p>
+            <button id="heroToggleButton" class="mini-button" type="button">Toggle Demo Light</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-grid">
+        <article class="glass-panel story-card">
+          <p class="eyebrow">Project Goal</p>
+          <h2>Why this project matters</h2>
+          <p>
+            Smart homes are not just about convenience. They are about building a reliable bridge
+            between people, software, and physical devices so that daily life becomes safer,
+            simpler, and more efficient.
+          </p>
+        </article>
+
+        <article class="glass-panel story-card">
+          <p class="eyebrow">Working Idea</p>
+          <h2>How it works</h2>
+          <p>
+            A mobile or web interface sends a command to the server. The server processes the
+            request, updates the device state, and returns feedback instantly so the user always
+            knows what is happening in the home.
+          </p>
+        </article>
+      </section>
+
+      <section class="section-heading">
+        <p class="eyebrow">Live Architecture</p>
+        <h2>From user action to real-world response</h2>
+      </section>
+
+      <section class="architecture-grid">
+        <article class="flow-card accent-cyan">
+          <span class="flow-icon">1</span>
+          <h3>User Interface</h3>
+          <p>Web or mobile screen where the user sends commands and sees feedback.</p>
+        </article>
+        <article class="flow-link">
+          <span></span>
+        </article>
+        <article class="flow-card accent-orange">
+          <span class="flow-icon">2</span>
+          <h3>Smart Home Server</h3>
+          <p>Central logic layer that receives requests and manages device states.</p>
+        </article>
+        <article class="flow-link">
+          <span></span>
+        </article>
+        <article class="flow-card accent-lime">
+          <span class="flow-icon">3</span>
+          <h3>Appliance Layer</h3>
+          <p>Lights, relays, sensors, and modules that perform the actual home actions.</p>
+        </article>
+      </section>
+
+      <section class="section-heading">
+        <p class="eyebrow">Explore The Project</p>
+        <h2>Presentation-ready views for your teacher</h2>
+      </section>
+
+      <section class="portal-grid">
+        <a class="portal-card" href="technical.html">
+          <span class="portal-tag">Technical</span>
+          <h3>System Flow</h3>
+          <p>Explain the server pipeline, request handling, and data movement visually.</p>
+        </a>
+        <a class="portal-card" href="hardware.html">
+          <span class="portal-tag">Components</span>
+          <h3>Hardware Stack</h3>
+          <p>Show the teacher exactly which modules and electronics power the project.</p>
+        </a>
+        <a class="portal-card" href="future.html">
+          <span class="portal-tag">Innovation</span>
+          <h3>Future Scope</h3>
+          <p>Present your roadmap with AI, automation, security, and energy features.</p>
+        </a>
+        <a class="portal-card" href="mobile.html">
+          <span class="portal-tag">Live Demo</span>
+          <h3>Control Screen</h3>
+          <p>Use a vibrant mobile-style interface to simulate the smart light workflow.</p>
+        </a>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

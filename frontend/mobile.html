@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Demo | Smart Home Advanced</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>Smart Home Advanced</strong>
+          <small>Mobile App Simulation</small>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="technical.html">Technical Flow</a>
+        <a href="hardware.html">Hardware</a>
+        <a href="future.html">Future Scope</a>
+        <a class="active" href="mobile.html">Mobile Demo</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Live Control Demo</p>
+        <h1>Interactive mobile-style control for the smart home server.</h1>
+        <p class="page-subtext">
+          This screen simulates how a user controls a home appliance from a mobile interface while
+          the server manages the device state in real time.
+        </p>
+      </div>
+      <div class="page-badge">Connected to live virtual devices</div>
+    </section>
+
+    <section class="phone-layout">
+      <article class="phone-shell">
+        <div class="phone-screen">
+          <div class="phone-header">
+            <span>09:41</span>
+            <span class="status-pill" id="serverPill"><span></span>Server sync</span>
+          </div>
+
+          <div class="phone-power"></div>
+
+          <div class="phone-title">
+            <h2>Virtual Smart Home Panel</h2>
+            <p>Control multiple online devices to demonstrate the project without physical hardware.</p>
+          </div>
+
+          <div class="phone-dashboard">
+            <div class="summary-grid">
+              <div class="summary-box">
+                <small>Room Temperature</small>
+                <strong id="temperatureText">--</strong>
+              </div>
+              <div class="summary-box">
+                <small>Power Load</small>
+                <strong id="powerText">--</strong>
+              </div>
+            </div>
+
+            <div class="device-grid">
+              <section class="device-card">
+                <span class="device-label">Lighting</span>
+                <h3>Living Room Light</h3>
+                <p id="lightState" class="device-state">Checking state...</p>
+                <button class="device-button" type="button" data-device="light">Toggle Light</button>
+              </section>
+
+              <section class="device-card">
+                <span class="device-label">Cooling</span>
+                <h3>Smart Fan</h3>
+                <p id="fanState" class="device-state">Checking state...</p>
+                <button class="device-button" type="button" data-device="fan">Toggle Fan</button>
+              </section>
+
+              <section class="device-card">
+                <span class="device-label">Access</span>
+                <h3>Main Door Lock</h3>
+                <p id="doorState" class="device-state">Checking state...</p>
+                <button class="device-button" type="button" data-device="door">Lock Or Unlock</button>
+              </section>
+
+              <section class="device-card">
+                <span class="device-label">Security</span>
+                <h3>Security Mode</h3>
+                <p id="securityState" class="device-state">Checking state...</p>
+                <button class="device-button" type="button" data-device="security">Toggle Security</button>
+              </section>
+            </div>
+
+            <div class="status-text" id="responseText">Waiting for the first response from the server.</div>
+
+            <div class="activity-log" id="activityLog">
+              <div class="activity-item">System started. Waiting for live server feedback.</div>
+            </div>
+          </div>
+
+          <a class="back-link" href="index.html">Back to dashboard</a>
+        </div>
+      </article>
+
+      <article class="status-grid">
+        <section class="status-card">
+          <p class="eyebrow">Teacher Note</p>
+          <h3>What this demonstrates</h3>
+          <ul class="status-list">
+            <li>User sends a command from the interface</li>
+            <li>Server updates the internal device state</li>
+            <li>UI reflects the result instantly to the user</li>
+          </ul>
+        </section>
+
+        <section class="status-card">
+          <p class="eyebrow">Project Value</p>
+          <h3>Why it matters</h3>
+          <ul class="status-list">
+            <li>Improves convenience in daily life</li>
+            <li>Creates a base for future automation</li>
+            <li>Shows integration of software with hardware concepts</li>
+          </ul>
+        </section>
+      </article>
+    </section>
+  </div>
+
+  <script>
+  const responseText = document.getElementById("responseText");
+  const activityLog = document.getElementById("activityLog");
+  const serverPill = document.getElementById("serverPill");
+  const temperatureText = document.getElementById("temperatureText");
+  const powerText = document.getElementById("powerText");
+  const deviceButtons = document.querySelectorAll("[data-device]");
+  const deviceFields = {
+    light: document.getElementById("lightState"),
+    fan: document.getElementById("fanState"),
+    door: document.getElementById("doorState"),
+    security: document.getElementById("securityState")
+  };
+
+  function addLog(message) {
+    const item = document.createElement("div");
+    item.className = "activity-item";
+    item.textContent = message;
+    activityLog.prepend(item);
+  }
+
+  function updatePill(isOnline) {
+    serverPill.classList.toggle("online", isOnline);
+    serverPill.lastChild.textContent = isOnline ? "Server online" : "Server offline";
+  }
+
+  function setStateField(element, active, activeText, inactiveText) {
+    element.classList.toggle("on", active);
+    element.textContent = active ? activeText : inactiveText;
+  }
+
+  function renderState(data) {
+    temperatureText.textContent = data.temperature + " C";
+    powerText.textContent = data.powerLoad + " kW";
+    setStateField(deviceFields.light, data.light, "Light is ON", "Light is OFF");
+    setStateField(deviceFields.fan, data.fan, "Fan is ON", "Fan is OFF");
+    setStateField(deviceFields.door, data.doorLocked, "Door is LOCKED", "Door is UNLOCKED");
+    setStateField(deviceFields.security, data.securityMode, "Security mode ACTIVE", "Security mode STANDBY");
+  }
+
+  async function loadStatus() {
+    try {
+      const response = await fetch("/devices");
+      const data = await response.json();
+      renderState(data);
+      responseText.textContent = "Server connection established successfully.";
+      updatePill(true);
+      addLog("Status checked. Virtual device states loaded from the server.");
+    } catch (error) {
+      responseText.textContent = "Server is unavailable right now.";
+      updatePill(false);
+      addLog("Status request failed because the server could not be reached.");
+    }
+  }
+
+  deviceButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const { device } = button.dataset;
+      const originalText = button.textContent;
+
+      button.disabled = true;
+      button.textContent = "Sending...";
+
+      try {
+        const response = await fetch("/device/" + device, { method: "POST" });
+        const data = await response.json();
+        renderState(data);
+        updatePill(true);
+        responseText.textContent = "Command successful. The virtual smart home updated online.";
+        addLog("Command sent for " + device + ". The server updated the virtual device state.");
+      } catch (error) {
+        responseText.textContent = "Command failed because the server is unavailable.";
+        updatePill(false);
+        addLog("Toggle request failed for " + device + ".");
+      } finally {
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    });
+  });
+
+  loadStatus();
+  </script>
+</body>
+</html>
